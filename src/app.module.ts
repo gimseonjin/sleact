@@ -3,9 +3,12 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { MorganInterceptor, MorganModule } from 'nest-morgan';
 import { UsersModule } from './users/users.module';
+import { DmsModule } from './dms/dms.module';
+import { ChannelsModule } from './channels/channels.module';
+import { WorkspacesModule } from './workspaces/workspaces.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({isGlobal : true}), MorganModule, UsersModule],
+  imports: [ConfigModule.forRoot({isGlobal : true}), MorganModule, UsersModule, DmsModule, ChannelsModule, WorkspacesModule],
   controllers: [],
   providers: [
     ConfigService,
