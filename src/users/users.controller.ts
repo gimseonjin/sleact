@@ -1,14 +1,15 @@
 import { Body, Controller, Delete, Get, Post, Put, Req, Res } from '@nestjs/common';
-import { ApiOperation } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { JoinRequestDto } from './dto/join.request.dto';
 import { UsersService } from './users.service';
 
+@ApiTags("USER")
 @Controller('api/users')
 export class UsersController {
 
     constructor(private usersService: UsersService){}
 
-    @ApiOperation({summary : "유저 정보 조회"})
+    @ApiOperation({summary : "내 정보 조회"})
     @Get()
     getUsers(@Req() req){
         return req.user;
