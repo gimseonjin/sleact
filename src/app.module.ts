@@ -6,9 +6,10 @@ import { UsersModule } from './users/users.module';
 import { DmsModule } from './dms/dms.module';
 import { ChannelsModule } from './channels/channels.module';
 import { WorkspacesModule } from './workspaces/workspaces.module';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({isGlobal : true}), MorganModule, UsersModule, DmsModule, ChannelsModule, WorkspacesModule],
+  imports: [ConfigModule.forRoot({isGlobal : true}), MorganModule, UsersModule, DmsModule, ChannelsModule, WorkspacesModule, DatabaseModule],
   controllers: [],
   providers: [
     ConfigService,
