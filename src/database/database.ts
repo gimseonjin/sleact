@@ -15,6 +15,8 @@ export const Database = [
                     __dirname + '/../**/*.entity{.ts,.js}',
                 ],
                 synchronize: true,
+                logging : true,
+                charset : "utf8mb4"
             });
 
             return dataSource.initialize();
