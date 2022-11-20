@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Post } from '@nestjs/common';
+import { Controller, Delete, Get, HttpException, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags("WORKSPACE")
@@ -6,7 +6,7 @@ import { ApiTags } from '@nestjs/swagger';
 export class WorkspacesController {
     @Get()
     getMyWorkspaces(){
-
+        throw new HttpException("400",400)
     }
 
     @Post()
